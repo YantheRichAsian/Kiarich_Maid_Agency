@@ -3,8 +3,8 @@ import { whatsappLink } from '../lib/site';
 
 const slides = [
   { src: '/images/home/hero/Hero-01.jpg', pos: 'center 35%', posMobile: 'center 30%' },
-  { src: '/images/home/hero/Hero-02.jpg', pos: 'center 40%', posMobile: 'center 25%' },
-  { src: '/images/home/hero/Hero-03.jpg', pos: 'center 30%', posMobile: 'center 20%' },
+  { src: '/images/home/hero/Hero-02.jpg', pos: 'center 40%', posMobile: 'center 25%', zoom: 1.18, shiftX: -6 },
+  { src: '/images/home/hero/Hero-03.jpg', pos: 'center 32%', posMobile: 'center 20%', zoom: 1.28, shiftX: 14 },
   { src: '/images/home/hero/Hero-04.jpg', pos: 'center 45%', posMobile: 'center 35%' },
 ];
 ---
@@ -16,13 +16,13 @@ const slides = [
       <div
         class="hero-carousel__slide absolute inset-0"
         class:list={[{ 'is-active': i === 0 }]}
-        style={`--pos: ${slide.pos}; --pos-mobile: ${slide.posMobile};`}
+        style={`--pos: ${slide.pos}; --pos-mobile: ${slide.posMobile}; --zoom: ${slide.zoom ?? 1}; --shift-x: ${slide.shiftX ?? 0}%;`}
         data-slide={i}
       >
         <img
           src={slide.src}
           alt=""
-          class="hero-carousel__img h-full w-full object-cover"
+          class="hero-carousel__img hero-carousel__img--desktop h-full w-full object-cover"
           loading={i === 0 ? 'eager' : 'lazy'}
           fetchpriority={i === 0 ? 'high' : 'low'}
           decoding="async"
@@ -208,8 +208,22 @@ const slides = [
     transform: scale(1);
     transform-origin: center center;
   }
-  .hero-carousel__slide.is-active .hero-carousel__img {
+  .hero-carousel__img--desktop {
+    transform: scale(var(--zoom, 1)) translateX(var(--shift-x, 0));
+  }
+  .hero-carousel__slide.is-active .hero-carousel__img:not(.hero-carousel__img--desktop) {
     animation: hero-ken-burns 6.5s ease-out forwards;
+  }
+  .hero-carousel__slide.is-active .hero-carousel__img--desktop {
+    animation: hero-ken-burns-desktop 6.5s ease-out forwards;
+  }
+  @keyframes hero-ken-burns-desktop {
+    from {
+      transform: scale(var(--zoom, 1)) translateX(var(--shift-x, 0));
+    }
+    to {
+      transform: scale(calc(var(--zoom, 1) * 1.02)) translateX(var(--shift-x, 0));
+    }
   }
 
   @media (max-width: 639px) {
