@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import BenefitsSection from '../components/BenefitsSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { whatsappLink } from '../lib/site';
+
+const blocks = [
+  { img: '/images/core-businesses/elderly.jpg', titleKey: 'services.elderly.title', bodyKey: 'services.elderly.body' },
+  { img: '/images/core-businesses/children.jpg', titleKey: 'services.children.title', bodyKey: 'services.children.body' },
+  { img: '/images/core-businesses/specific.jpg', titleKey: 'services.specific.title', bodyKey: 'services.specific.body' },
+];
+---
+
+<BaseLayout title="Services">
+  <PageHero titleKey="servicesPage.hero" subtitleKey="servicesPage.heroSubtitle" />
+
+  {blocks.map((b, i) => (
+    <section class:list={["section-pad", i % 2 === 0 ? "bg-white" : "bg-warm-50"]}>
+      <div class:list={["container-page grid gap-10 lg:grid-cols-2 lg:items-center", i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""]}>
+        <div class="aspect-[4/3] overflow-hidden rounded-xl2 shadow-card" data-reveal={i % 2 === 1 ? "slide-right" : "slide-left"}>
+          <img src={b.img} alt="" class="h-full w-full object-cover" />
+        </div>
+        <div data-reveal={i % 2 === 1 ? "slide-left" : "slide-right"} data-reveal-delay="120">
+          <h2 data-i18n={b.titleKey} class="text-3xl font-semibold sm:text-4xl"></h2>
+          <p data-i18n={b.bodyKey} class="mt-5 text-base text-charcoal-soft leading-relaxed"></p>
+          <a
+            href={whatsappLink('Hi Kiarich, I would like to enquire about your maid services.')}
+            target="_blank"
+            rel="noopener"
+            data-i18n="hero.ctaPrimary"
+            class="btn-primary mt-7 inline-flex"
+          ></a>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <BenefitsSection />
+  <CTABanner />
+</BaseLayout>

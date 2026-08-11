@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+.DS_Store
+tmp_qa*.mjs
+Agensi Pekerjaan Kiarich Sdn Bhd. | Above 20 Years of Trust, Professionalism, and Excellence Maid Agency.pdf

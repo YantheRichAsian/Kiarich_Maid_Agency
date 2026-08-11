@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "process": "Hiring Process",
+    "reviews": "Reviews",
+    "contact": "Contact Us",
+    "cta": "WhatsApp Us"
+  },
+  "hero": {
+    "eyebrow": "Above 20 Years of Trust & Professionalism",
+    "title": "A Trusted Bridge Between Families and Skilled Domestic Helpers",
+    "subtitle": "With more than two decades of experience, Kiarich helps Malaysian families and businesses find reliable, well-trained maids, caregivers and helpers — with care, integrity and lasting support.",
+    "ctaPrimary": "Chat With Us on WhatsApp",
+    "ctaSecondary": "Explore Our Services"
+  },
+  "stats": {
+    "years": "Years of Experience",
+    "maid": "Maids Placed",
+    "family": "Families Served",
+    "corporate": "Corporate Clients"
+  },
+  "aboutSnapshot": {
+    "eyebrow": "Who We Are",
+    "title": "Since 2002, Kiarich Has Been Building Trust, One Family at a Time",
+    "body": "Agensi Pekerjaan Kiarich Sdn Bhd has spent more than 20 years bridging families and businesses with skilled domestic helpers. Our legacy is founded on professionalism and integrity — every helper undergoes rigorous training and selection to ensure they deliver service tailored to your household's needs.",
+    "link": "Learn More About Us"
+  },
+  "servicesSection": {
+    "eyebrow": "Our Core Businesses",
+    "title": "Services Designed Around Your Family's Needs",
+    "subtitle": "From elderly care to childcare and everyday household support, our carefully selected helpers are trained to bring expertise, efficiency and heart to every task.",
+    "cta": "View All Services"
+  },
+  "services": {
+    "elderly": {
+      "title": "Elderly Care",
+      "summary": "We provide short-term and emergency assistance for elderly care.",
+      "body": "Our core service is to offer caregivers and maids to assist elderly individuals or patients with their Activities of Daily Living (ADL). To ensure high-quality service, all assistants are carefully selected from our trusted nursing and elderly home partners. Every caregiver undergoes a thorough screening and selection process, ensuring we provide the best possible care for you and your loved ones."
+    },
+    "children": {
+      "title": "Children Care",
+      "summary": "Professional and reliable childcare services for your little ones.",
+      "body": "We provide professional and reliable childcare services to ensure your little ones are well cared for in a safe and nurturing environment. Our trained caregivers offer personalised attention, assisting with daily activities, meals and learning — giving parents peace of mind while their children thrive."
+    },
+    "specific": {
+      "title": "Household & Specific Services",
+      "summary": "Trusted maid services for the everyday needs of your household.",
+      "body": "Kiarich provides trusted and professional maid services to meet the diverse needs of households. Our experienced, well-trained maids assist with cleaning, household chores and other daily tasks, giving you more free time to enjoy with your family. We focus on reliable, efficient and affordable service, ensuring your home stays safe, clean and comfortable."
+    }
+  },
+  "benefits": {
+    "eyebrow": "Why Families Trust Kiarich",
+    "title": "Three Key Benefits Kiarich Provides",
+    "professional": {
+      "title": "Professional & Reliable Service",
+      "body": "Carefully selected and well-trained domestic helpers with excellent skills and attitudes."
+    },
+    "trust": {
+      "title": "Trust & Safety",
+      "body": "Rigorous background checks and transparent communication ensure peace of mind."
+    },
+    "ongoing": {
+      "title": "Ongoing Support",
+      "body": "Dedicated customer service and long-term partnerships for consistent quality."
+    }
+  },
+  "process": {
+    "eyebrow": "A Step-by-Step Journey With Kiarich Agency",
+    "title": "Simplified Maid Hiring",
+    "subtitle": "From selection to handover — we make the process smooth and stress-free.",
+    "cta": "Start Your Hiring Journey",
+    "steps": [
+      { "title": "Maid Selection", "body": "We send maid profiles directly to you via WhatsApp. Interview videos are available, and personal online interviews can be arranged." },
+      { "title": "Confirmation", "body": "Secure your preferred maid with a deposit to kickstart the hiring process." },
+      { "title": "Job Offer", "body": "Finalise job details and have the candidate sign the Job Offer. A mandatory medical check-up will be conducted in the candidate's home country." },
+      { "title": "Documentation", "body": "Prepare the required documents using our checklist to ensure full compliance with government regulations." },
+      { "title": "Processing", "body": "We manage all submissions to the Labour Department (JTK), Immigration (IMM) and the Embassy to obtain approvals and visas. The entire process takes approximately 2–3 months, depending on government approval timelines." },
+      { "title": "Maid Arrival", "body": "Receive the maid's arrival schedule, final invoice and handover details." },
+      { "title": "Handover", "body": "After orientation and medical clearance, we officially hand over the maid to you." }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "What Families Say",
+    "title": "Trusted by Thousands of Families & Businesses",
+    "subtitle": "Real reviews from real families, shared on Google."
+  },
+  "facebookReviews": {
+    "eyebrow": "Featured Facebook Reviews",
+    "title": "Featured Facebook Reviews",
+    "subtitle": "A selection of genuine feedback shared by our customers on Facebook.",
+    "namePlaceholder": "Customer name to be added",
+    "placeholderNote": "Real Facebook review content will be added here once provided.",
+    "sourceLabel": "Via Facebook"
+  },
+  "ctaBanner": {
+    "title": "Ready to Find the Right Helper for Your Family?",
+    "subtitle": "Speak with our team today — we're just a message away.",
+    "button": "WhatsApp Us Now"
+  },
+  "footer": {
+    "tagline": "Above 20 Years of Trust, Professionalism, and Excellence.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "rights": "All rights reserved.",
+    "terms": "Use of this website signifies your agreement to the Terms of Use, Privacy Policy, and use of cookies."
+  },
+  "about": {
+    "hero": "About Kiarich",
+    "heroSubtitle": "Above 20 Years of Trust, Professionalism, and Excellence Maid Agency",
+    "storyTitle": "Our Story",
+    "storyBody1": "With more than two decades of experience, Kiarich has become a trusted leader in bridging families and businesses with skilled domestic helpers. Since 2002, we have been committed to providing reliable solutions that transform lives and create lasting relationships built on trust and respect.",
+    "storyBody2": "Our legacy is founded on professionalism and integrity. Every helper undergoes rigorous training and selection to ensure they deliver exceptional service tailored to meet diverse needs. From household management to caregiving, we empower helpers to bring expertise, efficiency, and heart to every task.",
+    "storyBody3": "As a pioneer in the industry, Kiarich understands the importance of trust and security. We take pride in offering not just skilled helpers but peace of mind for families and businesses. Our mission is to ease the challenges of modern life by providing dependable support while fostering a positive impact on society.",
+    "missionTitle": "Mission",
+    "missionBody": "To build a trusted bridge, precisely matching quality service talents, and fostering a harmonious and mutually beneficial future for employers and job seekers.",
+    "visionTitle": "Vision",
+    "visionBody": "To become Southeast Asia's leading service talent platform, enabling both employers and job seekers to achieve a better life.",
+    "galleryTitle": "Life at Kiarich"
+  },
+  "servicesPage": {
+    "hero": "Our Services",
+    "heroSubtitle": "Reliable domestic help, tailored to your household's needs."
+  },
+  "processPage": {
+    "hero": "Hiring Process",
+    "heroSubtitle": "A step-by-step journey with Kiarich Agency"
+  },
+  "reviewsPage": {
+    "hero": "Reviews & Testimonials",
+    "heroSubtitle": "Trusted by thousands of families and businesses across Malaysia"
+  },
+  "contactPage": {
+    "hero": "Contact Us",
+    "heroSubtitle": "For any query, you can contact us here",
+    "formTitle": "Send Us an Enquiry",
+    "formIntro": "Please complete the form below and we will get back to you soon.",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "emailLabel": "Email",
+    "serviceLabel": "Service Needed",
+    "messageLabel": "Message",
+    "submit": "Submit Enquiry",
+    "addressTitle": "Our Office",
+    "phoneTitle": "Phone",
+    "whatsappTitle": "WhatsApp",
+    "socialTitle": "Follow Us",
+    "serviceOptions": ["Household", "Elderly Care", "Children Care", "Specific Services"]
+  },
+  "lang": {
+    "switch": "中文"
+  }
+}

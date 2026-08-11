@@ -1,0 +1,20 @@
+---
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+
+<section class:list={["section-pad", compact ? "bg-warm-50" : "bg-white"]}>
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal="fade-up">
+      <p data-i18n="reviews.eyebrow" class="eyebrow justify-center"></p>
+      <h2 data-i18n="reviews.title" class="mt-3 text-3xl font-semibold sm:text-4xl"></h2>
+      <p data-i18n="reviews.subtitle" class="mt-4 text-base text-charcoal-soft"></p>
+    </div>
+
+    <div class="mt-14 overflow-hidden rounded-xl2 bg-warm-50 p-4 shadow-card sm:p-6" data-reveal="fade-up">
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div class="elfsight-app-386d0a87-68b8-47bf-9624-9a3565ee8341" data-elfsight-app-lazy></div>
+    </div>
+  </div>
+</section>
+

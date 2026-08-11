@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-warm-50 text-charcoal font-sans antialiased;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  p {
+    line-height: 1.7;
+  }
+
+  /* Chinese typography overrides */
+  html[lang="zh-CN"] body {
+    @apply font-zh;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  html[lang="zh-CN"] h1,
+  html[lang="zh-CN"] h2,
+  html[lang="zh-CN"] h3,
+  html[lang="zh-CN"] h4 {
+    @apply font-zh;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0;
+    /* Do NOT use word-break: keep-all here — it disables line-breaking
+       between CJK characters when there is no whitespace in the string,
+       which forces long Chinese headings onto a single unbreakable line
+       and causes horizontal overflow on mobile. Let CJK text wrap
+       naturally between characters, and still allow long Latin/number
+       runs to break if needed. */
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  html[lang="zh-CN"] p,
+  html[lang="zh-CN"] li,
+  html[lang="zh-CN"] a,
+  html[lang="zh-CN"] span,
+  html[lang="zh-CN"] label,
+  html[lang="zh-CN"] button {
+    letter-spacing: 0;
+  }
+  html[lang="zh-CN"] p {
+    line-height: 1.9;
+  }
+  html[lang="zh-CN"] .eyebrow {
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer base {
+  [data-reveal] {
+    opacity: 0;
+    will-change: transform, opacity;
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-reveal="fade-up"] {
+    transform: translateY(24px);
+  }
+  [data-reveal="fade-in"] {
+    transform: none;
+  }
+  [data-reveal="slide-left"] {
+    transform: translateX(-20px);
+  }
+  [data-reveal="slide-right"] {
+    transform: translateX(20px);
+  }
+  @media (min-width: 1024px) {
+    [data-reveal="slide-left"] {
+      transform: translateX(-32px);
+    }
+    [data-reveal="slide-right"] {
+      transform: translateX(32px);
+    }
+  }
+  [data-reveal="scale-in"] {
+    transform: scale(1.04);
+  }
+  [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  /* Safety net: if JavaScript fails to load/execute, never leave content invisible */
+  html:not(.js-reveal-ready) [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+  noscript [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-container mx-auto px-5 sm:px-8 lg:px-10;
+  }
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-28;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-brand-red;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-red px-7 py-3.5 text-sm sm:text-base font-semibold text-white shadow-card transition-all duration-300 hover:bg-brand-maroon hover:shadow-soft;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-charcoal/15 bg-white px-7 py-3.5 text-sm sm:text-base font-semibold text-charcoal transition-all duration-300 hover:border-brand-red hover:text-brand-red;
+  }
+  .nav-cta {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-warm-50 px-6 py-3 text-sm font-semibold text-brand-red shadow-card transition-all duration-300 hover:bg-white hover:text-brand-maroon;
+  }
+  .card-soft {
+    @apply rounded-xl2 bg-white shadow-card;
+  }
+}

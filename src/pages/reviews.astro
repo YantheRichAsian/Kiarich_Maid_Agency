@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+import FeaturedFacebookReviews from '../components/FeaturedFacebookReviews.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout title="Reviews">
+  <PageHero titleKey="reviewsPage.hero" subtitleKey="reviewsPage.heroSubtitle" />
+  <ReviewsSection />
+  <FeaturedFacebookReviews />
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+interface Props {
+  titleKey: string;
+  subtitleKey: string;
+  image?: string;
+}
+const { titleKey, subtitleKey, image } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-white">
+  <div class="container-page py-16 sm:py-20">
+    <div class="max-w-2xl" data-reveal="fade-up">
+      <h1 data-i18n={titleKey} class="text-4xl font-semibold sm:text-5xl"></h1>
+      <p data-i18n={subtitleKey} class="mt-4 text-base text-charcoal-soft sm:text-lg"></p>
+    </div>
+  </div>
+  {image && (
+    <div class="h-56 w-full overflow-hidden sm:h-72 lg:h-96" data-reveal="scale-in" data-reveal-delay="150">
+      <img src={image} alt="" class="h-full w-full object-cover" />
+    </div>
+  )}
+</section>

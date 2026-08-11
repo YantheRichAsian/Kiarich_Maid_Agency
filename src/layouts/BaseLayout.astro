@@ -1,0 +1,47 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+import en from '../i18n/en.json';
+import zh from '../i18n/zh.json';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Agensi Pekerjaan Kiarich Sdn Bhd — Above 20 Years of Trust, Professionalism, and Excellence Maid Agency in Malaysia.' } = Astro.props;
+const i18nData = JSON.stringify({ en, zh });
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logos/logo.png" />
+    <title>{title} | Kiarich Maid Agency</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="application/json" id="i18n-data" set:html={i18nData} />
+    <script is:inline>
+      (function () {
+        var data = JSON.parse(document.getElementById('i18n-data').textContent);
+        window.__I18N__ = data;
+      })();
+    </script>
+  </head>
+  <body>
+    <Nav />
+    <main class="pt-20 lg:pt-24">
+      <slot />
+    </main>
+    <Footer />
+    <WhatsAppButton />
+    <script is:inline src="/scripts/i18n-client.js"></script>
+    <script is:inline src="/scripts/reveal.js"></script>
+  </body>
+</html>

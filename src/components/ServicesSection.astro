@@ -1,0 +1,35 @@
+---
+const services = [
+  { img: '/images/core-businesses/elderly.jpg', titleKey: 'services.elderly.title', summaryKey: 'services.elderly.summary' },
+  { img: '/images/core-businesses/children.jpg', titleKey: 'services.children.title', summaryKey: 'services.children.summary' },
+  { img: '/images/core-businesses/specific.jpg', titleKey: 'services.specific.title', summaryKey: 'services.specific.summary' },
+];
+---
+
+<section class="section-pad bg-white">
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal="fade-up">
+      <p data-i18n="servicesSection.eyebrow" class="eyebrow justify-center"></p>
+      <h2 data-i18n="servicesSection.title" class="mt-3 text-3xl font-semibold sm:text-4xl"></h2>
+      <p data-i18n="servicesSection.subtitle" class="mt-4 text-base text-charcoal-soft"></p>
+    </div>
+
+    <div class="mt-14 grid gap-8 sm:grid-cols-3" data-reveal-stagger>
+      {services.map((s) => (
+        <a href="/services" class="group block overflow-hidden rounded-xl2 bg-warm-50 shadow-card transition hover:-translate-y-1 hover:shadow-soft">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src={s.img} alt="" class="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <h3 data-i18n={s.titleKey} class="text-lg font-semibold"></h3>
+            <p data-i18n={s.summaryKey} class="mt-2 text-sm text-charcoal-soft"></p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/services" data-i18n="servicesSection.cta" class="btn-outline"></a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,155 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务项目",
+    "process": "聘请流程",
+    "reviews": "客户评价",
+    "contact": "联系我们",
+    "cta": "WhatsApp 咨询"
+  },
+  "hero": {
+    "eyebrow": "20多年信任与专业的见证",
+    "title": "连接家庭与优质帮佣的信任桥梁",
+    "subtitle": "凭借超过二十年的经验，Kiarich 协助马来西亚家庭与企业，寻找可靠、训练有素的女佣、看护员与帮佣，用心服务、诚信经营、长期支持。",
+    "ctaPrimary": "WhatsApp 联系我们",
+    "ctaSecondary": "了解我们的服务"
+  },
+  "stats": {
+    "years": "年经验",
+    "maid": "位女佣成功配对",
+    "family": "个服务家庭",
+    "corporate": "个企业客户"
+  },
+  "aboutSnapshot": {
+    "eyebrow": "关于 Kiarich",
+    "title": "自2002年至今，一步一脚印建立信任",
+    "body": "Agensi Pekerjaan Kiarich Sdn Bhd 超过20年来致力于为家庭与企业连接专业可靠的帮佣。我们的信誉建立在专业与诚信之上——每一位帮佣都经过严格的培训与筛选，确保能依照您家庭的需求提供合适的服务。",
+    "link": "了解更多关于我们"
+  },
+  "servicesSection": {
+    "eyebrow": "我们的核心业务",
+    "title": "根据您家庭的需求量身设计的服务",
+    "subtitle": "从长者看护、儿童看护到日常家务协助，我们精心挑选的帮佣都经过专业训练，用心处理每一项工作。",
+    "cta": "查看全部服务"
+  },
+  "services": {
+    "elderly": {
+      "title": "长者看护",
+      "summary": "我们提供短期与紧急的长者看护协助服务。",
+      "body": "我们的核心服务是提供看护员或女佣，协助长者或病患处理日常生活活动（ADL）。为确保服务质量，所有看护人员皆从我们信赖的护理与养老院合作伙伴中精心挑选。每一位看护员都经过严格的审查与筛选流程，确保为您与家人提供最好的照护。"
+    },
+    "children": {
+      "title": "儿童看护",
+      "summary": "专业可靠的儿童看护服务，让孩子在安全的环境中成长。",
+      "body": "我们提供专业可靠的儿童看护服务，确保您的孩子在安全且充满关爱的环境中得到照顾。我们训练有素的看护员会给予个人化的关注，协助日常活动、用餐与学习，让父母安心，孩子健康成长。"
+    },
+    "specific": {
+      "title": "家务与特定服务",
+      "summary": "值得信赖的女佣服务，满足家庭日常所需。",
+      "body": "Kiarich 提供值得信赖的专业女佣服务，满足各类家庭的不同需求。我们经验丰富、训练有素的女佣可协助清洁、家务及其他日常工作，让您有更多时间与家人共度。我们专注于提供可靠、高效且经济实惠的服务，确保您的家一直安全、整洁、舒适。"
+    }
+  },
+  "benefits": {
+    "eyebrow": "家庭信赖 Kiarich 的理由",
+    "title": "Kiarich 提供的三大优势",
+    "professional": {
+      "title": "专业可靠的服务",
+      "body": "精心挑选、训练有素的帮佣，具备优良的技能与工作态度。"
+    },
+    "trust": {
+      "title": "信任与安全",
+      "body": "严格的背景审查与透明沟通，让您安心无忧。"
+    },
+    "ongoing": {
+      "title": "持续支持",
+      "body": "专属客服团队与长期合作关系，确保服务品质始终如一。"
+    }
+  },
+  "process": {
+    "eyebrow": "与 Kiarich 携手，一步一步完成聘请",
+    "title": "简化的女佣聘请流程",
+    "subtitle": "从挑选到交接——我们让整个过程顺畅无压力。",
+    "cta": "开始您的聘请之旅",
+    "steps": [
+      { "title": "挑选女佣", "body": "我们会透过 WhatsApp 直接发送女佣资料给您，并提供面试视频，也可安排个人线上面试。" },
+      { "title": "确认聘请", "body": "支付订金以确认您心目中的女佣，正式启动聘请流程。" },
+      { "title": "工作邀约", "body": "确定工作细节并让候选人签署工作邀约（Job Offer），候选人须在其原居国完成强制体检。" },
+      { "title": "准备文件", "body": "根据我们提供的清单准备所需文件，确保完全符合政府规定。" },
+      { "title": "审批处理", "body": "我们负责将所有申请提交至劳工局（JTK）、移民局（IMM）及大使馆，办理批准与签证手续。整个流程大约需要2至3个月，视政府审批时间而定。" },
+      { "title": "女佣抵达", "body": "您将收到女佣的抵达时间安排、最终账单及交接详情。" },
+      { "title": "正式交接", "body": "完成入职介绍与体检确认后，我们将正式把女佣交接给您。" }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "客户怎么说",
+    "title": "深受千万家庭与企业信赖",
+    "subtitle": "来自 Google 的真实客户评价。"
+  },
+  "facebookReviews": {
+    "eyebrow": "精选 Facebook 客户评价",
+    "title": "精选 Facebook 客户评价",
+    "subtitle": "以下是客户在 Facebook 上分享的真实反馈精选。",
+    "namePlaceholder": "客户姓名待补充",
+    "placeholderNote": "真实的 Facebook 评价内容将在提供后补充于此。",
+    "sourceLabel": "来自 Facebook"
+  },
+  "ctaBanner": {
+    "title": "准备好为您的家庭寻找合适的帮佣了吗？",
+    "subtitle": "立即联系我们的团队，我们随时为您服务。",
+    "button": "立即 WhatsApp 我们"
+  },
+  "footer": {
+    "tagline": "20多年信任、专业与卓越的见证。",
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "follow": "关注我们",
+    "rights": "版权所有。",
+    "terms": "使用本网站即表示您同意本网站的使用条款、隐私政策以及Cookie使用政策。"
+  },
+  "about": {
+    "hero": "关于 Kiarich",
+    "heroSubtitle": "20多年信任、专业与卓越的女佣中介",
+    "storyTitle": "我们的故事",
+    "storyBody1": "凭借超过二十年的经验，Kiarich 已成为连接家庭、企业与专业帮佣之间值得信赖的领导品牌。自2002年起，我们致力于提供可靠的解决方案，改变无数家庭的生活，并建立以信任与尊重为基础的长久关系。",
+    "storyBody2": "我们的信誉建立在专业与诚信之上。每一位帮佣都经过严格的培训与筛选，确保能提供符合不同需求的优质服务。从家务管理到看护工作，我们培养帮佣以专业、效率与用心完成每一项任务。",
+    "storyBody3": "作为行业的先驱，Kiarich 深知信任与安全的重要性。我们不仅提供技能娴熟的帮佣，更为家庭与企业带来安心。我们的使命是透过可靠的支持，减轻现代生活的挑战，同时为社会带来正面的影响。",
+    "missionTitle": "使命",
+    "missionBody": "建立值得信赖的桥梁，精准配对优质的服务人才，为雇主与求职者共创和谐互利的未来。",
+    "visionTitle": "愿景",
+    "visionBody": "成为东南亚领先的服务人才平台，协助雇主与求职者共同迈向更美好的生活。",
+    "galleryTitle": "Kiarich 的日常"
+  },
+  "servicesPage": {
+    "hero": "我们的服务",
+    "heroSubtitle": "根据您家庭的需求，提供可靠的帮佣服务。"
+  },
+  "processPage": {
+    "hero": "聘请流程",
+    "heroSubtitle": "与 Kiarich 携手，一步一步完成聘请"
+  },
+  "reviewsPage": {
+    "hero": "客户评价",
+    "heroSubtitle": "深受马来西亚千万家庭与企业信赖"
+  },
+  "contactPage": {
+    "hero": "联系我们",
+    "heroSubtitle": "有任何疑问，欢迎在此联系我们",
+    "formTitle": "发送咨询",
+    "formIntro": "请填写以下表格，我们将尽快与您联系。",
+    "nameLabel": "姓名",
+    "phoneLabel": "电话号码",
+    "emailLabel": "电邮",
+    "serviceLabel": "所需服务",
+    "messageLabel": "留言",
+    "submit": "提交咨询",
+    "addressTitle": "公司地址",
+    "phoneTitle": "电话",
+    "whatsappTitle": "WhatsApp",
+    "socialTitle": "关注我们",
+    "serviceOptions": ["家务帮佣", "长者看护", "儿童看护", "特定服务"]
+  },
+  "lang": {
+    "switch": "EN"
+  }
+}

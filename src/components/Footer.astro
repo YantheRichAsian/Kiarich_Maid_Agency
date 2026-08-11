@@ -1,0 +1,60 @@
+---
+import { SITE } from '../lib/site';
+
+const links = [
+  { href: '/about', key: 'nav.about' },
+  { href: '/services', key: 'nav.services' },
+  { href: '/hiring-process', key: 'nav.process' },
+  { href: '/reviews', key: 'nav.reviews' },
+  { href: '/contact', key: 'nav.contact' },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-charcoal text-warm-100">
+  <div class="container-page grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:py-20">
+    <div>
+      <img src="/images/logos/logo-footer.png" alt="Kiarich" class="h-14 w-auto" />
+      <p data-i18n="footer.tagline" class="mt-4 text-sm text-warm-100/70"></p>
+    </div>
+
+    <div>
+      <h4 data-i18n="footer.quickLinks" class="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-red"></h4>
+      <ul class="space-y-2">
+        {links.map((l) => (
+          <li><a href={l.href} data-i18n={l.key} class="text-sm text-warm-100/80 hover:text-white"></a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h4 data-i18n="footer.contact" class="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-red"></h4>
+      <p class="text-sm text-warm-100/80 leading-relaxed">
+        {SITE.legalName}<br />
+        {SITE.addressLine1}<br />
+        {SITE.addressLine2}<br />
+        {SITE.addressLine3}
+      </p>
+      <p class="mt-3 text-sm text-warm-100/80">
+        <a href={SITE.phoneHref} class="hover:text-white">{SITE.phoneDisplay}</a>
+      </p>
+    </div>
+
+    <div>
+      <h4 data-i18n="footer.follow" class="mb-4 text-sm font-semibold uppercase tracking-wider text-brand-red"></h4>
+      <div class="flex flex-wrap gap-3">
+        <a href={SITE.social.facebook} target="_blank" rel="noopener" class="rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/20">Facebook</a>
+        <a href={SITE.social.instagram} target="_blank" rel="noopener" class="rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/20">Instagram</a>
+        <a href={SITE.social.tiktok} target="_blank" rel="noopener" class="rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/20">TikTok</a>
+        <a href={SITE.social.youtube} target="_blank" rel="noopener" class="rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/20">YouTube</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 py-6">
+    <div class="container-page flex flex-col gap-2 text-xs text-warm-100/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>Copyright © {year} {SITE.legalName}. <span data-i18n="footer.rights"></span></p>
+      <p data-i18n="footer.terms" class="max-w-xl"></p>
+    </div>
+  </div>
+</footer>

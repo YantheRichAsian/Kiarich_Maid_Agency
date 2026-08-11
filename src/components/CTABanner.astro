@@ -1,0 +1,17 @@
+---
+import { whatsappLink } from '../lib/site';
+---
+
+<section class="section-pad bg-gradient-to-br from-brand-maroon to-brand-red">
+  <div class="container-page flex flex-col items-center gap-6 text-center" data-reveal="fade-up">
+    <h2 data-i18n="ctaBanner.title" class="w-full max-w-2xl text-3xl font-semibold text-white sm:text-4xl"></h2>
+    <p data-i18n="ctaBanner.subtitle" class="w-full max-w-xl text-base text-white/85 sm:text-lg"></p>
+    <a
+      href={whatsappLink('Hi Kiarich, I would like to enquire about your maid services.')}
+      target="_blank"
+      rel="noopener"
+      data-i18n="ctaBanner.button"
+      class="mt-2 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-brand-red shadow-soft transition hover:bg-warm-50"
+    ></a>
+  </div>
+</section>

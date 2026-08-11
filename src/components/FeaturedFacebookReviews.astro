@@ -1,0 +1,120 @@
+---
+// Featured Facebook Reviews — Social Proof section.
+//
+// IMPORTANT: This component intentionally does NOT embed the Facebook
+// Reviews Widget and does NOT call the Facebook API. It only renders
+// review content that is passed in explicitly via the `reviews` prop.
+//
+// The project does not currently contain any confirmed, real Facebook
+// customer review text/names/dates. Until real review content is
+// provided, this section renders clearly-labelled placeholder cards so
+// the UI/layout can be reviewed — no review content here is invented
+// customer feedback.
+//
+// To publish real reviews: pass a `reviews` prop (see Review type below)
+// from the page that uses this component, using only verified text taken
+// from actual Facebook reviews.
+
+interface Review {
+  name?: string;
+  avatar?: string;
+  date?: string;
+  text: string;
+  isPlaceholder?: boolean;
+}
+
+interface Props {
+  compact?: boolean;
+  reviews?: Review[];
+}
+
+// Real, confirmed Facebook customer reviews (verbatim, provided by the client).
+const defaultReviews: Review[] = [
+  {
+    name: 'JC Siew Mei',
+    avatar: '/images/reviews/jc-siew-mei-avatar.png',
+    text: 'Jennifer 非常用心、值得信赖的女佣公司。真正站在雇主的立场思考问题。最让我满意的是，当女佣在工作态度或沟通上出现不听话、配合度不足的情况时，公司不会推卸责任，而是主动介入，安排女佣进行辅导与 counselling，讲解工作要求与雇主的期待，帮她们调整心态、改善表现。\n\n更难得的是，就算女佣的合约已经结束，公司依然愿意帮忙协调与劝导，展现出高度的责任感与人情味，而不是"合约一完就不理"。既照顾雇主的感受，也让女佣明白本分与责任。处理问题效率高，让人感到安心与被支持。整体来说，这是一家真正重视服务品质、长期关系与口碑的女佣公司，非常值得推荐给需要可靠协助的家庭。',
+  },
+  {
+    name: 'Yek Sweefong',
+    avatar: '/images/reviews/yek-sweefong-avatar.png',
+    text: "The agency recognised employers' concern regarding the quality of maid. Very strict with their maids which is what employer wants.",
+  },
+  {
+    name: 'Osk Seng Kuan',
+    avatar: '/images/reviews/osk-seng-kuan-avatar.png',
+    text: 'Recently hired a maid via Kiarich Agency. Ms Jennifer is helpful and responsive throughout the whole process. The hiring process is faster than the other agency. So far everything is good. 👍',
+  },
+];
+
+const { compact = false, reviews = defaultReviews } = Astro.props;
+---
+
+<section class:list={["section-pad", compact ? "bg-white" : "bg-warm-50"]}>
+  <div class="container-page">
+    <div class="mx-auto max-w-2xl text-center" data-reveal="fade-up">
+      <p data-i18n="facebookReviews.eyebrow" class="eyebrow justify-center"></p>
+      <h2 data-i18n="facebookReviews.title" class="mt-3 text-3xl font-semibold sm:text-4xl"></h2>
+      <p data-i18n="facebookReviews.subtitle" class="mt-4 text-base text-charcoal-soft"></p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {reviews.map((review, i) => (
+        <div
+          class="card-soft relative flex h-full flex-col justify-between p-6 sm:p-7"
+          data-reveal="fade-up"
+          data-reveal-delay={i * 100}
+        >
+          <div>
+            <div class="flex items-center gap-3">
+              {review.avatar ? (
+                <img
+                  src={review.avatar}
+                  alt={review.name ? `${review.name} — Facebook customer` : 'Facebook customer avatar'}
+                  class="h-12 w-12 shrink-0 rounded-full object-cover sm:h-14 sm:w-14"
+                  loading="lazy"
+                  width="56"
+                  height="56"
+                />
+              ) : (
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1877F2]">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4 fill-white">
+                    <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.83c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/>
+                  </svg>
+                </span>
+              )}
+              <div class="flex flex-col">
+                {review.name ? (
+                  <span class="text-sm font-semibold text-charcoal">{review.name}</span>
+                ) : (
+                  <span data-i18n="facebookReviews.namePlaceholder" class="text-sm font-medium italic text-charcoal-soft/70"></span>
+                )}
+                {review.avatar && (
+                  <span class="inline-flex items-center gap-1 text-xs text-[#1877F2]">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-3 w-3 fill-[#1877F2]">
+                      <path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.83c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.23.2 2.23.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.9h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.92 8.44-9.94z"/>
+                    </svg>
+                    Facebook
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <p class="mt-4 whitespace-pre-line text-sm leading-relaxed text-charcoal-soft">
+              {review.isPlaceholder ? (
+                <span data-i18n="facebookReviews.placeholderNote" class="italic text-charcoal-soft/70"></span>
+              ) : (
+                review.text
+              )}
+            </p>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between border-t border-line pt-4">
+            <span data-i18n="facebookReviews.sourceLabel" class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[#1877F2]"></span>
+            {review.date && <span class="text-xs text-charcoal-soft/70">{review.date}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

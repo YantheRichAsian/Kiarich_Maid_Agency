@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import StatBar from '../components/StatBar.astro';
+import AboutSnapshot from '../components/AboutSnapshot.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import BenefitsSection from '../components/BenefitsSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import ReviewsSection from '../components/ReviewsSection.astro';
+import FeaturedFacebookReviews from '../components/FeaturedFacebookReviews.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout title="Home">
+  <Hero />
+  <StatBar />
+  <AboutSnapshot />
+  <ServicesSection />
+  <BenefitsSection />
+  <ProcessSteps compact />
+  <ReviewsSection compact />
+  <FeaturedFacebookReviews compact />
+  <CTABanner />
+</BaseLayout>

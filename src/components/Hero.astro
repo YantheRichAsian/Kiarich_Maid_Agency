@@ -1,0 +1,290 @@
+---
+import { whatsappLink } from '../lib/site';
+
+const slides = [
+  { src: '/images/home/hero/Hero-01.jpg', pos: 'center 35%', posMobile: 'center 30%' },
+  { src: '/images/home/hero/Hero-02.jpg', pos: 'center 40%', posMobile: 'center 25%' },
+  { src: '/images/home/hero/Hero-03.jpg', pos: 'center 30%', posMobile: 'center 20%' },
+  { src: '/images/home/hero/Hero-04.jpg', pos: 'center 45%', posMobile: 'center 35%' },
+];
+---
+
+<!-- Desktop Hero (unchanged): text left, full-bleed carousel right, warm-white gradient fade -->
+<section class="hero-instance hero-carousel relative isolate hidden overflow-hidden lg:block">
+  <div class="hero-carousel__slides absolute inset-0" aria-hidden="true">
+    {slides.map((slide, i) => (
+      <div
+        class="hero-carousel__slide absolute inset-0"
+        class:list={[{ 'is-active': i === 0 }]}
+        style={`--pos: ${slide.pos}; --pos-mobile: ${slide.posMobile};`}
+        data-slide={i}
+      >
+        <img
+          src={slide.src}
+          alt=""
+          class="hero-carousel__img h-full w-full object-cover"
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'low'}
+          decoding="async"
+        />
+      </div>
+    ))}
+  </div>
+
+  <div class="hero-carousel__gradient absolute inset-0"></div>
+
+  <div class="container-page relative z-10 py-24 sm:py-28 lg:py-36">
+    <div class="max-w-lg" data-reveal="slide-left">
+      <p data-i18n="hero.eyebrow" class="eyebrow"></p>
+      <h1 data-i18n="hero.title" class="mt-5 max-w-full text-3xl font-semibold leading-[1.2] sm:text-4xl lg:text-[2.65rem]"></h1>
+      <p data-i18n="hero.subtitle" class="mt-6 max-w-md text-base text-charcoal-soft sm:text-lg"></p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a
+          href={whatsappLink('Hi Kiarich, I would like to enquire about your maid services.')}
+          target="_blank"
+          rel="noopener"
+          data-i18n="hero.ctaPrimary"
+          class="btn-primary"
+        ></a>
+        <a href="/services" data-i18n="hero.ctaSecondary" class="btn-outline"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-carousel__dots absolute bottom-6 left-0 right-0 z-10 flex items-center justify-center gap-2 sm:bottom-8" role="tablist" aria-label="Hero slides">
+    {slides.map((_, i) => (
+      <button
+        type="button"
+        class="hero-carousel__dot h-2 w-2 rounded-full bg-charcoal/25 transition-all duration-300"
+        class:list={[{ 'is-active': i === 0 }]}
+        data-dot={i}
+        aria-label={`Go to slide ${i + 1}`}
+      ></button>
+    ))}
+  </div>
+</section>
+
+<!-- Mobile Hero (independent layout): text block on top, full-clarity photo carousel below -->
+<section class="hero-instance hero-mobile relative lg:hidden">
+  <div class="hero-mobile__text container-page pt-10 pb-8 sm:pt-14 sm:pb-10">
+    <div data-reveal="fade-up">
+      <p data-i18n="hero.eyebrow" class="eyebrow"></p>
+      <h1 data-i18n="hero.title" class="mt-4 text-3xl font-semibold leading-[1.25] sm:text-4xl"></h1>
+      <p data-i18n="hero.subtitle" class="mt-5 text-base text-charcoal-soft"></p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a
+          href={whatsappLink('Hi Kiarich, I would like to enquire about your maid services.')}
+          target="_blank"
+          rel="noopener"
+          data-i18n="hero.ctaPrimary"
+          class="btn-primary"
+        ></a>
+        <a href="/services" data-i18n="hero.ctaSecondary" class="btn-outline"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-mobile__media-wrap container-page pb-12 sm:pb-16" data-reveal="fade-up">
+    <div class="hero-mobile__media relative overflow-hidden rounded-2xl shadow-card">
+      <div class="hero-carousel__slides relative h-full w-full" aria-hidden="true">
+        {slides.map((slide, i) => (
+          <div
+            class="hero-carousel__slide absolute inset-0"
+            class:list={[{ 'is-active': i === 0 }]}
+            style={`--pos: ${slide.pos}; --pos-mobile: ${slide.posMobile};`}
+            data-slide={i}
+          >
+            <img
+              src={slide.src}
+              alt=""
+              class="hero-carousel__img h-full w-full object-cover"
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchpriority={i === 0 ? 'high' : 'low'}
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="hero-carousel__dots mt-5 flex items-center justify-center gap-2" role="tablist" aria-label="Hero slides">
+      {slides.map((_, i) => (
+        <button
+          type="button"
+          class="hero-carousel__dot h-2 w-2 rounded-full bg-charcoal/25 transition-all duration-300"
+          class:list={[{ 'is-active': i === 0 }]}
+          data-dot={i}
+          aria-label={`Go to slide ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var sections = Array.prototype.slice.call(document.querySelectorAll('.hero-instance'));
+    if (!sections.length) return;
+
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    sections.forEach(function (section) {
+      var slides = Array.prototype.slice.call(section.querySelectorAll('.hero-carousel__slide'));
+      var dots = Array.prototype.slice.call(section.querySelectorAll('.hero-carousel__dot'));
+      if (slides.length < 2) return;
+
+      var current = 0;
+      var intervalMs = 5500;
+      var timer: ReturnType<typeof setInterval> | null = null;
+
+      function goTo(index: number) {
+        if (index === current) return;
+        slides[current].classList.remove('is-active');
+        dots[current] && dots[current].classList.remove('is-active');
+        current = index;
+        slides[current].classList.add('is-active');
+        dots[current] && dots[current].classList.add('is-active');
+      }
+
+      function next() {
+        goTo((current + 1) % slides.length);
+      }
+
+      function start() {
+        if (prefersReduced || timer) return;
+        timer = setInterval(next, intervalMs);
+      }
+
+      function stop() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          goTo(i);
+          stop();
+          start();
+        });
+      });
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      start();
+    });
+  })();
+</script>
+
+<style>
+  .hero-carousel {
+    min-height: 560px;
+  }
+  @media (min-width: 640px) {
+    .hero-carousel {
+      min-height: 640px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-carousel {
+      min-height: 720px;
+    }
+  }
+
+  .hero-carousel__slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .hero-carousel__slide.is-active {
+    opacity: 1;
+    z-index: 1;
+  }
+  .hero-carousel__img {
+    object-position: var(--pos, center center);
+    transform: scale(1);
+    transform-origin: center center;
+  }
+  .hero-carousel__slide.is-active .hero-carousel__img {
+    animation: hero-ken-burns 6.5s ease-out forwards;
+  }
+
+  @media (max-width: 639px) {
+    .hero-carousel__img {
+      object-position: var(--pos-mobile, center center);
+    }
+  }
+
+  @keyframes hero-ken-burns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+
+  .hero-carousel__gradient {
+    z-index: 2;
+    background: linear-gradient(
+      90deg,
+      rgba(251, 247, 245, 1) 0%,
+      rgba(251, 247, 245, 1) 40%,
+      rgba(251, 247, 245, 0.75) 47%,
+      rgba(251, 247, 245, 0.35) 52%,
+      rgba(251, 247, 245, 0.08) 57%,
+      rgba(251, 247, 245, 0) 60%
+    );
+  }
+
+  @media (max-width: 639px) {
+    .hero-carousel__gradient {
+      background: linear-gradient(
+        180deg,
+        rgba(251, 247, 245, 1) 0%,
+        rgba(251, 247, 245, 1) 38%,
+        rgba(251, 247, 245, 0.98) 55%,
+        rgba(251, 247, 245, 0.93) 68%,
+        rgba(251, 247, 245, 0.9) 82%,
+        rgba(251, 247, 245, 0.88) 100%
+      );
+    }
+  }
+
+  .hero-mobile__media {
+    aspect-ratio: 4 / 5;
+    background-color: theme('colors.warm.100', #f3ece7);
+  }
+  @media (min-width: 480px) {
+    .hero-mobile__media {
+      aspect-ratio: 16 / 11;
+    }
+  }
+  .hero-mobile__media .hero-carousel__slide {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .hero-mobile__media .hero-carousel__slide.is-active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+  .hero-carousel__dot.is-active {
+    background-color: theme('colors.brand.red');
+    width: 1.5rem;
+    border-radius: 9999px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-carousel__slide {
+      transition: none;
+    }
+    .hero-carousel__slide.is-active .hero-carousel__img {
+      animation: none;
+    }
+  }
+</style>
+

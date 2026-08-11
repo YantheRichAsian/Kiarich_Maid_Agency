@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout title="Hiring Process">
+  <PageHero titleKey="processPage.hero" subtitleKey="processPage.heroSubtitle" />
+  <ProcessSteps />
+  <CTABanner />
+</BaseLayout>
