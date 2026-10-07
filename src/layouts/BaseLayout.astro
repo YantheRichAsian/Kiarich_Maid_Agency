@@ -50,6 +50,54 @@ const i18nData = JSON.stringify({ en, zh });
     </main>
     <Footer />
     <WhatsAppButton />
+    <script is:inline>
+      (function () {
+        if (window.__kiarichWhatsAppConversionTracking) return;
+        window.__kiarichWhatsAppConversionTracking = true;
+
+        function sendWhatsAppConversion() {
+          try {
+            if (typeof window.gtag === 'function') {
+              window.gtag('event', 'conversion', {
+                send_to: 'AW-18437333605/nQvvCLPy6pMdEOXEzddE'
+              });
+            }
+          } catch (error) {
+            // Tracking must never interfere with the WhatsApp action.
+          }
+        }
+
+        function isWhatsAppUrl(href) {
+          try {
+            var url = new URL(href, window.location.href);
+            var hostname = url.hostname.toLowerCase();
+            return url.protocol === 'whatsapp:' ||
+              hostname === 'wa.me' ||
+              hostname === 'whatsapp.com' ||
+              hostname.endsWith('.whatsapp.com');
+          } catch (error) {
+            return false;
+          }
+        }
+
+        document.addEventListener('click', function (event) {
+          var target = event.target;
+          if (!(target instanceof Element)) return;
+
+          var link = target.closest('a[href]');
+          if (link && isWhatsAppUrl(link.href)) {
+            sendWhatsAppConversion();
+          }
+        });
+
+        document.addEventListener('submit', function (event) {
+          var form = event.target;
+          if (form instanceof HTMLFormElement && form.matches('[data-whatsapp-conversion]')) {
+            sendWhatsAppConversion();
+          }
+        });
+      })();
+    </script>
     <script is:inline src="/scripts/i18n-client.js"></script>
     <script is:inline src="/scripts/reveal.js"></script>
   </body>
